@@ -142,6 +142,9 @@
   <data name="chamber" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\chamber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\clove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cypher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\cypher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,6 +168,9 @@
   </data>
   <data name="icebox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icebox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\iso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jett" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\jett.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

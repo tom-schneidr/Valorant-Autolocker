@@ -143,6 +143,16 @@ namespace Autolocker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clove {
+            get {
+                object obj = ResourceManager.GetObject("clove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cypher {
             get {
                 object obj = ResourceManager.GetObject("cypher", resourceCulture);
@@ -216,6 +226,16 @@ namespace Autolocker.Properties {
         internal static System.Drawing.Bitmap icebox {
             get {
                 object obj = ResourceManager.GetObject("icebox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iso {
+            get {
+                object obj = ResourceManager.GetObject("iso", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

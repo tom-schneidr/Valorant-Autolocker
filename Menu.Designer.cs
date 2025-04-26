@@ -28,6 +28,8 @@ namespace Autolocker
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.agentPage = new System.Windows.Forms.TabPage();
+      this.selectIsoButton = new System.Windows.Forms.Button();
+      this.selectCloveButton = new System.Windows.Forms.Button();
       this.selectDeadlockButton = new System.Windows.Forms.Button();
       this.checkBoxUseConfig = new System.Windows.Forms.CheckBox();
       this.selectedAgentLabel = new System.Windows.Forms.Label();
@@ -94,12 +96,14 @@ namespace Autolocker
       this.tabControl1.Location = new System.Drawing.Point(0, 0);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(1065, 470);
+      this.tabControl1.Size = new System.Drawing.Size(863, 524);
       this.tabControl1.TabIndex = 27;
       // 
       // agentPage
       // 
       this.agentPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.agentPage.Controls.Add(this.selectIsoButton);
+      this.agentPage.Controls.Add(this.selectCloveButton);
       this.agentPage.Controls.Add(this.selectDeadlockButton);
       this.agentPage.Controls.Add(this.checkBoxUseConfig);
       this.agentPage.Controls.Add(this.selectedAgentLabel);
@@ -131,16 +135,38 @@ namespace Autolocker
       this.agentPage.Location = new System.Drawing.Point(4, 28);
       this.agentPage.Name = "agentPage";
       this.agentPage.Padding = new System.Windows.Forms.Padding(3);
-      this.agentPage.Size = new System.Drawing.Size(1057, 438);
+      this.agentPage.Size = new System.Drawing.Size(855, 492);
       this.agentPage.TabIndex = 0;
       this.agentPage.Text = "Agent Select";
       this.agentPage.UseVisualStyleBackColor = true;
+      // 
+      // selectIsoButton
+      // 
+      this.selectIsoButton.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.selectIsoButton.Image = global::Autolocker.Properties.Resources.iso;
+      this.selectIsoButton.Location = new System.Drawing.Point(244, 155);
+      this.selectIsoButton.Name = "selectIsoButton";
+      this.selectIsoButton.Size = new System.Drawing.Size(85, 85);
+      this.selectIsoButton.TabIndex = 55;
+      this.selectIsoButton.UseVisualStyleBackColor = true;
+      this.selectIsoButton.Click += new System.EventHandler(this.SelectIsoButton_Click);
+      // 
+      // selectCloveButton
+      // 
+      this.selectCloveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.selectCloveButton.Image = global::Autolocker.Properties.Resources.clove;
+      this.selectCloveButton.Location = new System.Drawing.Point(426, 64);
+      this.selectCloveButton.Name = "selectCloveButton";
+      this.selectCloveButton.Size = new System.Drawing.Size(85, 85);
+      this.selectCloveButton.TabIndex = 54;
+      this.selectCloveButton.UseVisualStyleBackColor = true;
+      this.selectCloveButton.Click += new System.EventHandler(this.SelectCloveButton_Click);
       // 
       // selectDeadlockButton
       // 
       this.selectDeadlockButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectDeadlockButton.Image = global::Autolocker.Properties.Resources.deadlock;
-      this.selectDeadlockButton.Location = new System.Drawing.Point(489, 62);
+      this.selectDeadlockButton.Location = new System.Drawing.Point(608, 64);
       this.selectDeadlockButton.Name = "selectDeadlockButton";
       this.selectDeadlockButton.Size = new System.Drawing.Size(85, 85);
       this.selectDeadlockButton.TabIndex = 53;
@@ -152,7 +178,7 @@ namespace Autolocker
       this.checkBoxUseConfig.AutoSize = true;
       this.checkBoxUseConfig.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxUseConfig.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxUseConfig.Location = new System.Drawing.Point(440, 320);
+      this.checkBoxUseConfig.Location = new System.Drawing.Point(337, 396);
       this.checkBoxUseConfig.Name = "checkBoxUseConfig";
       this.checkBoxUseConfig.Size = new System.Drawing.Size(146, 31);
       this.checkBoxUseConfig.TabIndex = 52;
@@ -164,7 +190,7 @@ namespace Autolocker
       // 
       this.selectedAgentLabel.AutoSize = true;
       this.selectedAgentLabel.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.selectedAgentLabel.Location = new System.Drawing.Point(424, 22);
+      this.selectedAgentLabel.Location = new System.Drawing.Point(317, 23);
       this.selectedAgentLabel.Name = "selectedAgentLabel";
       this.selectedAgentLabel.Size = new System.Drawing.Size(226, 27);
       this.selectedAgentLabel.TabIndex = 51;
@@ -174,7 +200,7 @@ namespace Autolocker
       // 
       this.selectYoruButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectYoruButton.Image = global::Autolocker.Properties.Resources.yoru;
-      this.selectYoruButton.Location = new System.Drawing.Point(944, 153);
+      this.selectYoruButton.Location = new System.Drawing.Point(699, 246);
       this.selectYoruButton.Name = "selectYoruButton";
       this.selectYoruButton.Size = new System.Drawing.Size(85, 85);
       this.selectYoruButton.TabIndex = 50;
@@ -185,7 +211,7 @@ namespace Autolocker
       // 
       this.selectSkyeButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectSkyeButton.Image = global::Autolocker.Properties.Resources.skye;
-      this.selectSkyeButton.Location = new System.Drawing.Point(671, 153);
+      this.selectSkyeButton.Location = new System.Drawing.Point(426, 246);
       this.selectSkyeButton.Name = "selectSkyeButton";
       this.selectSkyeButton.Size = new System.Drawing.Size(85, 85);
       this.selectSkyeButton.TabIndex = 47;
@@ -196,7 +222,7 @@ namespace Autolocker
       // 
       this.selectSovaButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectSovaButton.Image = global::Autolocker.Properties.Resources.sova;
-      this.selectSovaButton.Location = new System.Drawing.Point(762, 153);
+      this.selectSovaButton.Location = new System.Drawing.Point(517, 246);
       this.selectSovaButton.Name = "selectSovaButton";
       this.selectSovaButton.Size = new System.Drawing.Size(85, 85);
       this.selectSovaButton.TabIndex = 48;
@@ -207,7 +233,7 @@ namespace Autolocker
       // 
       this.selectViperButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectViperButton.Image = global::Autolocker.Properties.Resources.viper;
-      this.selectViperButton.Location = new System.Drawing.Point(853, 153);
+      this.selectViperButton.Location = new System.Drawing.Point(608, 246);
       this.selectViperButton.Name = "selectViperButton";
       this.selectViperButton.Size = new System.Drawing.Size(85, 85);
       this.selectViperButton.TabIndex = 49;
@@ -218,7 +244,7 @@ namespace Autolocker
       // 
       this.selectPhoenixButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectPhoenixButton.Image = global::Autolocker.Properties.Resources.phoenix;
-      this.selectPhoenixButton.Location = new System.Drawing.Point(305, 153);
+      this.selectPhoenixButton.Location = new System.Drawing.Point(62, 246);
       this.selectPhoenixButton.Name = "selectPhoenixButton";
       this.selectPhoenixButton.Size = new System.Drawing.Size(85, 85);
       this.selectPhoenixButton.TabIndex = 43;
@@ -229,7 +255,7 @@ namespace Autolocker
       // 
       this.selectRazeButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectRazeButton.Image = global::Autolocker.Properties.Resources.raze;
-      this.selectRazeButton.Location = new System.Drawing.Point(398, 153);
+      this.selectRazeButton.Location = new System.Drawing.Point(153, 246);
       this.selectRazeButton.Name = "selectRazeButton";
       this.selectRazeButton.Size = new System.Drawing.Size(85, 85);
       this.selectRazeButton.TabIndex = 44;
@@ -240,7 +266,7 @@ namespace Autolocker
       // 
       this.selectReynaButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectReynaButton.Image = global::Autolocker.Properties.Resources.reyna;
-      this.selectReynaButton.Location = new System.Drawing.Point(489, 153);
+      this.selectReynaButton.Location = new System.Drawing.Point(244, 246);
       this.selectReynaButton.Name = "selectReynaButton";
       this.selectReynaButton.Size = new System.Drawing.Size(85, 85);
       this.selectReynaButton.TabIndex = 45;
@@ -251,7 +277,7 @@ namespace Autolocker
       // 
       this.selectSageButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectSageButton.Image = global::Autolocker.Properties.Resources.sage;
-      this.selectSageButton.Location = new System.Drawing.Point(580, 153);
+      this.selectSageButton.Location = new System.Drawing.Point(335, 246);
       this.selectSageButton.Name = "selectSageButton";
       this.selectSageButton.Size = new System.Drawing.Size(85, 85);
       this.selectSageButton.TabIndex = 46;
@@ -262,7 +288,7 @@ namespace Autolocker
       // 
       this.selectJettButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectJettButton.Image = global::Autolocker.Properties.Resources.jett;
-      this.selectJettButton.Location = new System.Drawing.Point(853, 62);
+      this.selectJettButton.Location = new System.Drawing.Point(335, 155);
       this.selectJettButton.Name = "selectJettButton";
       this.selectJettButton.Size = new System.Drawing.Size(85, 85);
       this.selectJettButton.TabIndex = 38;
@@ -273,7 +299,7 @@ namespace Autolocker
       // 
       this.selectKayoButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectKayoButton.Image = global::Autolocker.Properties.Resources.kayo;
-      this.selectKayoButton.Location = new System.Drawing.Point(944, 62);
+      this.selectKayoButton.Location = new System.Drawing.Point(426, 155);
       this.selectKayoButton.Name = "selectKayoButton";
       this.selectKayoButton.Size = new System.Drawing.Size(85, 85);
       this.selectKayoButton.TabIndex = 39;
@@ -284,7 +310,7 @@ namespace Autolocker
       // 
       this.selectKilljoyButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectKilljoyButton.Image = global::Autolocker.Properties.Resources.killjoy;
-      this.selectKilljoyButton.Location = new System.Drawing.Point(32, 153);
+      this.selectKilljoyButton.Location = new System.Drawing.Point(517, 155);
       this.selectKilljoyButton.Name = "selectKilljoyButton";
       this.selectKilljoyButton.Size = new System.Drawing.Size(85, 85);
       this.selectKilljoyButton.TabIndex = 40;
@@ -295,7 +321,7 @@ namespace Autolocker
       // 
       this.selectNeonButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectNeonButton.Image = global::Autolocker.Properties.Resources.neon;
-      this.selectNeonButton.Location = new System.Drawing.Point(123, 153);
+      this.selectNeonButton.Location = new System.Drawing.Point(608, 155);
       this.selectNeonButton.Name = "selectNeonButton";
       this.selectNeonButton.Size = new System.Drawing.Size(85, 85);
       this.selectNeonButton.TabIndex = 41;
@@ -306,7 +332,7 @@ namespace Autolocker
       // 
       this.selectOmenButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectOmenButton.Image = global::Autolocker.Properties.Resources.omen;
-      this.selectOmenButton.Location = new System.Drawing.Point(214, 153);
+      this.selectOmenButton.Location = new System.Drawing.Point(699, 155);
       this.selectOmenButton.Name = "selectOmenButton";
       this.selectOmenButton.Size = new System.Drawing.Size(85, 85);
       this.selectOmenButton.TabIndex = 42;
@@ -318,7 +344,7 @@ namespace Autolocker
       this.selectFadeButton.BackColor = System.Drawing.SystemColors.Control;
       this.selectFadeButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectFadeButton.Image = global::Autolocker.Properties.Resources.fade;
-      this.selectFadeButton.Location = new System.Drawing.Point(580, 62);
+      this.selectFadeButton.Location = new System.Drawing.Point(699, 64);
       this.selectFadeButton.Name = "selectFadeButton";
       this.selectFadeButton.Size = new System.Drawing.Size(85, 85);
       this.selectFadeButton.TabIndex = 35;
@@ -329,7 +355,7 @@ namespace Autolocker
       // 
       this.selectGekkoButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectGekkoButton.Image = global::Autolocker.Properties.Resources.gekko;
-      this.selectGekkoButton.Location = new System.Drawing.Point(671, 62);
+      this.selectGekkoButton.Location = new System.Drawing.Point(62, 155);
       this.selectGekkoButton.Name = "selectGekkoButton";
       this.selectGekkoButton.Size = new System.Drawing.Size(85, 85);
       this.selectGekkoButton.TabIndex = 36;
@@ -340,7 +366,7 @@ namespace Autolocker
       // 
       this.selectHarborButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectHarborButton.Image = global::Autolocker.Properties.Resources.harbor;
-      this.selectHarborButton.Location = new System.Drawing.Point(762, 62);
+      this.selectHarborButton.Location = new System.Drawing.Point(153, 155);
       this.selectHarborButton.Name = "selectHarborButton";
       this.selectHarborButton.Size = new System.Drawing.Size(85, 85);
       this.selectHarborButton.TabIndex = 37;
@@ -351,7 +377,7 @@ namespace Autolocker
       // 
       this.selectBrimstoneButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectBrimstoneButton.Image = global::Autolocker.Properties.Resources.brimstone;
-      this.selectBrimstoneButton.Location = new System.Drawing.Point(214, 62);
+      this.selectBrimstoneButton.Location = new System.Drawing.Point(244, 64);
       this.selectBrimstoneButton.Name = "selectBrimstoneButton";
       this.selectBrimstoneButton.Size = new System.Drawing.Size(85, 85);
       this.selectBrimstoneButton.TabIndex = 32;
@@ -362,7 +388,7 @@ namespace Autolocker
       // 
       this.selectCypherButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectCypherButton.Image = global::Autolocker.Properties.Resources.cypher;
-      this.selectCypherButton.Location = new System.Drawing.Point(396, 62);
+      this.selectCypherButton.Location = new System.Drawing.Point(517, 64);
       this.selectCypherButton.Name = "selectCypherButton";
       this.selectCypherButton.Size = new System.Drawing.Size(85, 85);
       this.selectCypherButton.TabIndex = 34;
@@ -373,7 +399,7 @@ namespace Autolocker
       // 
       this.selectChamberButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectChamberButton.Image = global::Autolocker.Properties.Resources.chamber;
-      this.selectChamberButton.Location = new System.Drawing.Point(305, 62);
+      this.selectChamberButton.Location = new System.Drawing.Point(335, 64);
       this.selectChamberButton.Name = "selectChamberButton";
       this.selectChamberButton.Size = new System.Drawing.Size(85, 85);
       this.selectChamberButton.TabIndex = 33;
@@ -384,7 +410,7 @@ namespace Autolocker
       // 
       this.selectBreachButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectBreachButton.Image = global::Autolocker.Properties.Resources.breach;
-      this.selectBreachButton.Location = new System.Drawing.Point(123, 62);
+      this.selectBreachButton.Location = new System.Drawing.Point(153, 64);
       this.selectBreachButton.Name = "selectBreachButton";
       this.selectBreachButton.Size = new System.Drawing.Size(85, 85);
       this.selectBreachButton.TabIndex = 31;
@@ -395,7 +421,7 @@ namespace Autolocker
       // 
       this.selectAstraButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.selectAstraButton.Image = global::Autolocker.Properties.Resources.astra;
-      this.selectAstraButton.Location = new System.Drawing.Point(32, 62);
+      this.selectAstraButton.Location = new System.Drawing.Point(62, 64);
       this.selectAstraButton.Name = "selectAstraButton";
       this.selectAstraButton.Size = new System.Drawing.Size(85, 85);
       this.selectAstraButton.TabIndex = 30;
@@ -407,7 +433,7 @@ namespace Autolocker
       this.activeKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.activeKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.activeKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.activeKeybindButton.Location = new System.Drawing.Point(564, 375);
+      this.activeKeybindButton.Location = new System.Drawing.Point(461, 433);
       this.activeKeybindButton.Name = "activeKeybindButton";
       this.activeKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.activeKeybindButton.TabIndex = 29;
@@ -420,7 +446,7 @@ namespace Autolocker
       this.randomKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.randomKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.randomKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.randomKeybindButton.Location = new System.Drawing.Point(564, 258);
+      this.randomKeybindButton.Location = new System.Drawing.Point(461, 349);
       this.randomKeybindButton.Name = "randomKeybindButton";
       this.randomKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.randomKeybindButton.TabIndex = 28;
@@ -433,7 +459,7 @@ namespace Autolocker
       this.checkBoxActive.AutoSize = true;
       this.checkBoxActive.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxActive.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxActive.Location = new System.Drawing.Point(440, 379);
+      this.checkBoxActive.Location = new System.Drawing.Point(337, 437);
       this.checkBoxActive.Name = "checkBoxActive";
       this.checkBoxActive.Size = new System.Drawing.Size(98, 31);
       this.checkBoxActive.TabIndex = 27;
@@ -446,7 +472,7 @@ namespace Autolocker
       this.checkBoxRandomAgent.AutoSize = true;
       this.checkBoxRandomAgent.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxRandomAgent.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxRandomAgent.Location = new System.Drawing.Point(440, 262);
+      this.checkBoxRandomAgent.Location = new System.Drawing.Point(337, 353);
       this.checkBoxRandomAgent.Name = "checkBoxRandomAgent";
       this.checkBoxRandomAgent.Size = new System.Drawing.Size(118, 31);
       this.checkBoxRandomAgent.TabIndex = 26;
@@ -482,7 +508,7 @@ namespace Autolocker
       this.configPage.Location = new System.Drawing.Point(4, 28);
       this.configPage.Name = "configPage";
       this.configPage.Padding = new System.Windows.Forms.Padding(3);
-      this.configPage.Size = new System.Drawing.Size(1057, 438);
+      this.configPage.Size = new System.Drawing.Size(855, 492);
       this.configPage.TabIndex = 1;
       this.configPage.Text = "Config";
       this.configPage.UseVisualStyleBackColor = true;
@@ -515,7 +541,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.sunsetConfigDropdown.Location = new System.Drawing.Point(564, 274);
+      this.sunsetConfigDropdown.Location = new System.Drawing.Point(450, 236);
       this.sunsetConfigDropdown.Name = "sunsetConfigDropdown";
       this.sunsetConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.sunsetConfigDropdown.TabIndex = 21;
@@ -524,7 +550,7 @@ namespace Autolocker
       // 
       this.sunsetConfigLabel.AutoSize = true;
       this.sunsetConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.sunsetConfigLabel.Location = new System.Drawing.Point(474, 274);
+      this.sunsetConfigLabel.Location = new System.Drawing.Point(360, 236);
       this.sunsetConfigLabel.Name = "sunsetConfigLabel";
       this.sunsetConfigLabel.Size = new System.Drawing.Size(62, 22);
       this.sunsetConfigLabel.TabIndex = 20;
@@ -532,7 +558,7 @@ namespace Autolocker
       // 
       // buttonRemoveBackgroundImage
       // 
-      this.buttonRemoveBackgroundImage.Location = new System.Drawing.Point(662, 323);
+      this.buttonRemoveBackgroundImage.Location = new System.Drawing.Point(548, 376);
       this.buttonRemoveBackgroundImage.Name = "buttonRemoveBackgroundImage";
       this.buttonRemoveBackgroundImage.Size = new System.Drawing.Size(160, 31);
       this.buttonRemoveBackgroundImage.TabIndex = 19;
@@ -542,7 +568,7 @@ namespace Autolocker
       // 
       // buttonSetBackgroundImage
       // 
-      this.buttonSetBackgroundImage.Location = new System.Drawing.Point(478, 323);
+      this.buttonSetBackgroundImage.Location = new System.Drawing.Point(364, 376);
       this.buttonSetBackgroundImage.Name = "buttonSetBackgroundImage";
       this.buttonSetBackgroundImage.Size = new System.Drawing.Size(160, 31);
       this.buttonSetBackgroundImage.TabIndex = 18;
@@ -554,7 +580,7 @@ namespace Autolocker
       // 
       this.havenConfigLabel.AutoSize = true;
       this.havenConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.havenConfigLabel.Location = new System.Drawing.Point(154, 274);
+      this.havenConfigLabel.Location = new System.Drawing.Point(40, 236);
       this.havenConfigLabel.Name = "havenConfigLabel";
       this.havenConfigLabel.Size = new System.Drawing.Size(63, 22);
       this.havenConfigLabel.TabIndex = 17;
@@ -588,7 +614,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.havenConfigDropdown.Location = new System.Drawing.Point(244, 274);
+      this.havenConfigDropdown.Location = new System.Drawing.Point(130, 236);
       this.havenConfigDropdown.Name = "havenConfigDropdown";
       this.havenConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.havenConfigDropdown.TabIndex = 16;
@@ -597,7 +623,7 @@ namespace Autolocker
       // 
       this.splitConfigLabel.AutoSize = true;
       this.splitConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.splitConfigLabel.Location = new System.Drawing.Point(474, 224);
+      this.splitConfigLabel.Location = new System.Drawing.Point(360, 186);
       this.splitConfigLabel.Name = "splitConfigLabel";
       this.splitConfigLabel.Size = new System.Drawing.Size(46, 22);
       this.splitConfigLabel.TabIndex = 15;
@@ -631,7 +657,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.splitConfigDropdown.Location = new System.Drawing.Point(564, 224);
+      this.splitConfigDropdown.Location = new System.Drawing.Point(450, 186);
       this.splitConfigDropdown.Name = "splitConfigDropdown";
       this.splitConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.splitConfigDropdown.TabIndex = 14;
@@ -640,7 +666,7 @@ namespace Autolocker
       // 
       this.pearlConfigLabel.AutoSize = true;
       this.pearlConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.pearlConfigLabel.Location = new System.Drawing.Point(474, 174);
+      this.pearlConfigLabel.Location = new System.Drawing.Point(360, 136);
       this.pearlConfigLabel.Name = "pearlConfigLabel";
       this.pearlConfigLabel.Size = new System.Drawing.Size(52, 22);
       this.pearlConfigLabel.TabIndex = 13;
@@ -674,7 +700,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.pearlConfigDropdown.Location = new System.Drawing.Point(564, 174);
+      this.pearlConfigDropdown.Location = new System.Drawing.Point(450, 136);
       this.pearlConfigDropdown.Name = "pearlConfigDropdown";
       this.pearlConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.pearlConfigDropdown.TabIndex = 12;
@@ -683,7 +709,7 @@ namespace Autolocker
       // 
       this.lotusConfigLabel.AutoSize = true;
       this.lotusConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lotusConfigLabel.Location = new System.Drawing.Point(474, 124);
+      this.lotusConfigLabel.Location = new System.Drawing.Point(360, 86);
       this.lotusConfigLabel.Name = "lotusConfigLabel";
       this.lotusConfigLabel.Size = new System.Drawing.Size(55, 22);
       this.lotusConfigLabel.TabIndex = 11;
@@ -717,7 +743,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.lotusConfigDropdown.Location = new System.Drawing.Point(564, 124);
+      this.lotusConfigDropdown.Location = new System.Drawing.Point(450, 86);
       this.lotusConfigDropdown.Name = "lotusConfigDropdown";
       this.lotusConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.lotusConfigDropdown.TabIndex = 10;
@@ -726,7 +752,7 @@ namespace Autolocker
       // 
       this.iceboxConfigLabel.AutoSize = true;
       this.iceboxConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.iceboxConfigLabel.Location = new System.Drawing.Point(474, 74);
+      this.iceboxConfigLabel.Location = new System.Drawing.Point(360, 36);
       this.iceboxConfigLabel.Name = "iceboxConfigLabel";
       this.iceboxConfigLabel.Size = new System.Drawing.Size(65, 22);
       this.iceboxConfigLabel.TabIndex = 9;
@@ -760,7 +786,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.iceboxConfigDropdown.Location = new System.Drawing.Point(564, 74);
+      this.iceboxConfigDropdown.Location = new System.Drawing.Point(450, 36);
       this.iceboxConfigDropdown.Name = "iceboxConfigDropdown";
       this.iceboxConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.iceboxConfigDropdown.TabIndex = 8;
@@ -769,7 +795,7 @@ namespace Autolocker
       // 
       this.fractureConfigLabel.AutoSize = true;
       this.fractureConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.fractureConfigLabel.Location = new System.Drawing.Point(154, 224);
+      this.fractureConfigLabel.Location = new System.Drawing.Point(40, 186);
       this.fractureConfigLabel.Name = "fractureConfigLabel";
       this.fractureConfigLabel.Size = new System.Drawing.Size(79, 22);
       this.fractureConfigLabel.TabIndex = 7;
@@ -803,7 +829,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.fractureConfigDropdown.Location = new System.Drawing.Point(244, 224);
+      this.fractureConfigDropdown.Location = new System.Drawing.Point(130, 186);
       this.fractureConfigDropdown.Name = "fractureConfigDropdown";
       this.fractureConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.fractureConfigDropdown.TabIndex = 6;
@@ -812,7 +838,7 @@ namespace Autolocker
       // 
       this.breezeConfigLabel.AutoSize = true;
       this.breezeConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.breezeConfigLabel.Location = new System.Drawing.Point(154, 174);
+      this.breezeConfigLabel.Location = new System.Drawing.Point(40, 136);
       this.breezeConfigLabel.Name = "breezeConfigLabel";
       this.breezeConfigLabel.Size = new System.Drawing.Size(65, 22);
       this.breezeConfigLabel.TabIndex = 5;
@@ -846,7 +872,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.breezeConfigDropdown.Location = new System.Drawing.Point(244, 174);
+      this.breezeConfigDropdown.Location = new System.Drawing.Point(130, 136);
       this.breezeConfigDropdown.Name = "breezeConfigDropdown";
       this.breezeConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.breezeConfigDropdown.TabIndex = 4;
@@ -855,7 +881,7 @@ namespace Autolocker
       // 
       this.bindConfigLabel.AutoSize = true;
       this.bindConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bindConfigLabel.Location = new System.Drawing.Point(154, 124);
+      this.bindConfigLabel.Location = new System.Drawing.Point(40, 86);
       this.bindConfigLabel.Name = "bindConfigLabel";
       this.bindConfigLabel.Size = new System.Drawing.Size(47, 22);
       this.bindConfigLabel.TabIndex = 3;
@@ -889,7 +915,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.bindConfigDropdown.Location = new System.Drawing.Point(244, 124);
+      this.bindConfigDropdown.Location = new System.Drawing.Point(130, 86);
       this.bindConfigDropdown.Name = "bindConfigDropdown";
       this.bindConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.bindConfigDropdown.TabIndex = 2;
@@ -898,7 +924,7 @@ namespace Autolocker
       // 
       this.ascentConfigLabel.AutoSize = true;
       this.ascentConfigLabel.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ascentConfigLabel.Location = new System.Drawing.Point(154, 74);
+      this.ascentConfigLabel.Location = new System.Drawing.Point(40, 36);
       this.ascentConfigLabel.Name = "ascentConfigLabel";
       this.ascentConfigLabel.Size = new System.Drawing.Size(66, 22);
       this.ascentConfigLabel.TabIndex = 1;
@@ -932,7 +958,7 @@ namespace Autolocker
             "Sova",
             "Viper",
             "Yoru"});
-      this.ascentConfigDropdown.Location = new System.Drawing.Point(244, 74);
+      this.ascentConfigDropdown.Location = new System.Drawing.Point(130, 36);
       this.ascentConfigDropdown.Name = "ascentConfigDropdown";
       this.ascentConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.ascentConfigDropdown.TabIndex = 0;
@@ -945,7 +971,7 @@ namespace Autolocker
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1065, 470);
+      this.ClientSize = new System.Drawing.Size(863, 524);
       this.Controls.Add(this.tabControl1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Menu";
@@ -1016,6 +1042,8 @@ namespace Autolocker
         private Button selectDeadlockButton;
     private ComboBox sunsetConfigDropdown;
     private Label sunsetConfigLabel;
+    private Button selectCloveButton;
+    private Button selectIsoButton;
   }
 }
 
