@@ -28,6 +28,7 @@ namespace Autolocker
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.agentPage = new System.Windows.Forms.TabPage();
+      this.checkBoxDuelist = new System.Windows.Forms.CheckBox();
       this.selectIsoButton = new System.Windows.Forms.Button();
       this.selectCloveButton = new System.Windows.Forms.Button();
       this.selectDeadlockButton = new System.Windows.Forms.Button();
@@ -102,6 +103,7 @@ namespace Autolocker
       // agentPage
       // 
       this.agentPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.agentPage.Controls.Add(this.checkBoxDuelist);
       this.agentPage.Controls.Add(this.selectIsoButton);
       this.agentPage.Controls.Add(this.selectCloveButton);
       this.agentPage.Controls.Add(this.selectDeadlockButton);
@@ -139,6 +141,19 @@ namespace Autolocker
       this.agentPage.TabIndex = 0;
       this.agentPage.Text = "Agent Select";
       this.agentPage.UseVisualStyleBackColor = true;
+      // 
+      // checkBoxDuelist
+      // 
+      this.checkBoxDuelist.AutoSize = true;
+      this.checkBoxDuelist.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.checkBoxDuelist.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxDuelist.Location = new System.Drawing.Point(533, 395);
+      this.checkBoxDuelist.Name = "checkBoxDuelist";
+      this.checkBoxDuelist.Size = new System.Drawing.Size(202, 31);
+      this.checkBoxDuelist.TabIndex = 57;
+      this.checkBoxDuelist.Text = "random Duelist";
+      this.checkBoxDuelist.UseVisualStyleBackColor = true;
+      this.checkBoxDuelist.CheckedChanged += new System.EventHandler(this.CheckBoxDuelist_CheckedChanged);
       // 
       // selectIsoButton
       // 
@@ -178,7 +193,7 @@ namespace Autolocker
       this.checkBoxUseConfig.AutoSize = true;
       this.checkBoxUseConfig.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxUseConfig.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxUseConfig.Location = new System.Drawing.Point(337, 396);
+      this.checkBoxUseConfig.Location = new System.Drawing.Point(365, 355);
       this.checkBoxUseConfig.Name = "checkBoxUseConfig";
       this.checkBoxUseConfig.Size = new System.Drawing.Size(146, 31);
       this.checkBoxUseConfig.TabIndex = 52;
@@ -433,7 +448,7 @@ namespace Autolocker
       this.activeKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.activeKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.activeKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.activeKeybindButton.Location = new System.Drawing.Point(461, 433);
+      this.activeKeybindButton.Location = new System.Drawing.Point(469, 429);
       this.activeKeybindButton.Name = "activeKeybindButton";
       this.activeKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.activeKeybindButton.TabIndex = 29;
@@ -446,7 +461,7 @@ namespace Autolocker
       this.randomKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.randomKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.randomKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.randomKeybindButton.Location = new System.Drawing.Point(461, 349);
+      this.randomKeybindButton.Location = new System.Drawing.Point(281, 391);
       this.randomKeybindButton.Name = "randomKeybindButton";
       this.randomKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.randomKeybindButton.TabIndex = 28;
@@ -459,7 +474,7 @@ namespace Autolocker
       this.checkBoxActive.AutoSize = true;
       this.checkBoxActive.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxActive.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxActive.Location = new System.Drawing.Point(337, 437);
+      this.checkBoxActive.Location = new System.Drawing.Point(365, 433);
       this.checkBoxActive.Name = "checkBoxActive";
       this.checkBoxActive.Size = new System.Drawing.Size(98, 31);
       this.checkBoxActive.TabIndex = 27;
@@ -472,7 +487,7 @@ namespace Autolocker
       this.checkBoxRandomAgent.AutoSize = true;
       this.checkBoxRandomAgent.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxRandomAgent.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxRandomAgent.Location = new System.Drawing.Point(337, 353);
+      this.checkBoxRandomAgent.Location = new System.Drawing.Point(173, 395);
       this.checkBoxRandomAgent.Name = "checkBoxRandomAgent";
       this.checkBoxRandomAgent.Size = new System.Drawing.Size(118, 31);
       this.checkBoxRandomAgent.TabIndex = 26;
@@ -1044,6 +1059,7 @@ namespace Autolocker
     private Label sunsetConfigLabel;
     private Button selectCloveButton;
     private Button selectIsoButton;
+    private CheckBox checkBoxDuelist;
   }
 }
 

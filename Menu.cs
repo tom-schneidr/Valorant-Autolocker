@@ -100,6 +100,16 @@ namespace Autolocker
       selectedAgentLabel.Text = "Selected agent: RANDOM";
     }
 
+    public void SelectRandomDuelist()
+    {
+      String[] duelists = { "Phoenix", "Raze", "Reyna", "Jett", "Yoru", "Iso", "Neon" };
+      Random rand = new Random();
+      int randomNumber = rand.Next(0, duelists.Length - 1);
+      agentName = duelists[randomNumber];
+      selectedAgentLabel.Text = "Selected Duelist: " + agentName;
+    }
+
+
     public void SearchMap()
     {
       map = null;
@@ -422,6 +432,11 @@ namespace Autolocker
       while (checkBoxActive.Checked)
       {
         Thread.Sleep(50);
+        if (checkBoxDuelist.Checked)
+        {
+          checkBoxDuelist.Invoke((Action)(() => SelectRandomDuelist()));
+        }
+
         if (checkBoxUseConfig.Checked)
         {
           while (map == null && checkBoxUseConfig.Checked && checkBoxActive.Checked)
@@ -490,14 +505,14 @@ namespace Autolocker
             while (DateTime.Now.TimeOfDay <= endtime)
             {
               Cursor.Position = new Point(fullX - 45, fullY - 45);
-              Thread.Sleep(50);
+              Thread.Sleep(100);
               mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
               mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
               Cursor.Position = new Point(950, 750); // LOCK IN button
-              Thread.Sleep(50);
+              Thread.Sleep(100);
               mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
               mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-              Thread.Sleep(50);
+              Thread.Sleep(100);
             }
             break;
           }
@@ -1032,6 +1047,11 @@ namespace Autolocker
         configPage.BackgroundImage = null;
         Settings.Default.backgroundImagePath = "";
       }
+    }
+
+    private void CheckBoxDuelist_CheckedChanged(object sender, EventArgs e)
+    {
+
     }
   }
 }
