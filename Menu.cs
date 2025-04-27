@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Autolocker
@@ -100,8 +101,9 @@ namespace Autolocker
       selectedAgentLabel.Text = "Selected agent: RANDOM";
     }
 
-    public void SelectRandomDuelist()
+    public async Task SelectRandomDuelist()
     {
+      await Task.Delay(1000);
       String[] duelists = { "Phoenix", "Raze", "Reyna", "Jett", "Yoru", "Iso", "Neon" };
       Random rand = new Random();
       int randomNumber = rand.Next(0, duelists.Length - 1);
