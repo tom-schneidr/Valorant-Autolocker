@@ -82,16 +82,20 @@ namespace Autolocker
       this.bindConfigDropdown = new System.Windows.Forms.ComboBox();
       this.ascentConfigLabel = new System.Windows.Forms.Label();
       this.ascentConfigDropdown = new System.Windows.Forms.ComboBox();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.Favourites = new System.Windows.Forms.ListBox();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.tabControl1.SuspendLayout();
       this.agentPage.SuspendLayout();
       this.configPage.SuspendLayout();
+      this.tabPage1.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl1
       // 
       this.tabControl1.Controls.Add(this.agentPage);
       this.tabControl1.Controls.Add(this.configPage);
+      this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControl1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -978,6 +982,55 @@ namespace Autolocker
       this.ascentConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.ascentConfigDropdown.TabIndex = 0;
       // 
+      // tabPage1
+      // 
+      this.tabPage1.Controls.Add(this.Favourites);
+      this.tabPage1.Location = new System.Drawing.Point(4, 28);
+      this.tabPage1.Name = "tabPage1";
+      this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage1.Size = new System.Drawing.Size(855, 492);
+      this.tabPage1.TabIndex = 2;
+      this.tabPage1.Text = "Favourites";
+      this.tabPage1.UseVisualStyleBackColor = true;
+      this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+      // 
+      // Favourites
+      // 
+      this.Favourites.Anchor = System.Windows.Forms.AnchorStyles.Top;
+      this.Favourites.FormattingEnabled = true;
+      this.Favourites.ItemHeight = 19;
+      this.Favourites.Items.AddRange(new object[] {
+            "Astra",
+            "Breach",
+            "Brimstone",
+            "Clove",
+            "Chamber",
+            "Cypher",
+            "Deadlock",
+            "Fade",
+            "Gekko",
+            "Harbor",
+            "Iso",
+            "Jett",
+            "Kay/o",
+            "Killjoy",
+            "Neon",
+            "Omen",
+            "Phoenix",
+            "Raze",
+            "Reyna",
+            "Sage",
+            "Skye",
+            "Sova",
+            "Viper",
+            "Yoru"});
+      this.Favourites.Location = new System.Drawing.Point(359, 24);
+      this.Favourites.Name = "Favourites";
+      this.Favourites.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+      this.Favourites.Size = new System.Drawing.Size(102, 460);
+      this.Favourites.TabIndex = 0;
+      this.Favourites.SelectedIndexChanged += new System.EventHandler(this.Favourites_SelectedIndexChanged);
+      // 
       // openFileDialog1
       // 
       this.openFileDialog1.FileName = "openFileDialog1";
@@ -997,13 +1050,12 @@ namespace Autolocker
       this.agentPage.PerformLayout();
       this.configPage.ResumeLayout(false);
       this.configPage.PerformLayout();
+      this.tabPage1.ResumeLayout(false);
       this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TabControl tabControl1;
         private TabPage agentPage;
         private Label selectedAgentLabel;
         private Button selectYoruButton;
@@ -1060,6 +1112,9 @@ namespace Autolocker
     private Button selectCloveButton;
     private Button selectIsoButton;
     private CheckBox checkBoxDuelist;
+    private TabControl tabControl1;
+    private TabPage tabPage1;
+    private ListBox Favourites;
   }
 }
 
