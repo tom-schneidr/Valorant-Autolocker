@@ -1,9 +1,11 @@
 ﻿using Autolocker.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Autolocker
@@ -32,6 +34,7 @@ namespace Autolocker
 
     // Variables YAY
     readonly string[] allAgents = { "Astra", "Breach", "Brimstone", "Chamber", "Clove", "Cypher", "Deadlock", "Fade", "Gekko", "Harbor", "Iso", "Jett", "KAYO", "Killjoy", "Omen", "Phoenix", "Raze", "Reyna", "Sage", "Skye", "Sova", "Viper", "Yoru" };
+    List<String> allFavourites = new List<String>();
     string agentName = "Jett";
     string randomBind = "F7";
     string activeBind = "F8";
@@ -99,6 +102,30 @@ namespace Autolocker
       agentName = allAgents[randomNumber];
       selectedAgentLabel.Text = "Selected agent: RANDOM";
     }
+
+    public async Task SelectRandomDuelistOrFavourite()
+    {
+      if (allFavourites.Count > 0)
+      {
+        await Task.Delay(1000);
+        Random rand = new Random();
+        int randomNumber = rand.Next(0, allFavourites.Count - 1);
+        agentName = allFavourites[randomNumber];
+        selectedAgentLabel.Text = "Selected Favourite: " + agentName;
+        return;
+      }
+
+      else
+      {
+        await Task.Delay(1000);
+        String[] duelists = { "Phoenix", "Raze", "Reyna", "Jett", "Yoru", "Iso", "Neon" };
+        Random rand = new Random();
+        int randomNumber = rand.Next(0, duelists.Length - 1);
+        agentName = duelists[randomNumber];
+        selectedAgentLabel.Text = "Selected Favourite/Duelist: " + agentName;
+      }
+    }
+
 
     public void SearchMap()
     {
@@ -422,6 +449,11 @@ namespace Autolocker
       while (checkBoxActive.Checked)
       {
         Thread.Sleep(50);
+        if (checkBoxDuelist.Checked)
+        {
+          checkBoxDuelist.Invoke((Action)(() => SelectRandomDuelistOrFavourite()));
+        }
+
         if (checkBoxUseConfig.Checked)
         {
           while (map == null && checkBoxUseConfig.Checked && checkBoxActive.Checked)
@@ -493,7 +525,13 @@ namespace Autolocker
               Thread.Sleep(50);
               mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
               mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+              Thread.Sleep(50);
+              mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+              mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
               Cursor.Position = new Point(950, 750); // LOCK IN button
+              Thread.Sleep(50);
+              mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+              mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
               Thread.Sleep(50);
               mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
               mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
@@ -1031,6 +1069,26 @@ namespace Autolocker
         agentPage.BackgroundImage = null;
         configPage.BackgroundImage = null;
         Settings.Default.backgroundImagePath = "";
+      }
+    }
+
+    private void CheckBoxDuelist_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void tabPage1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Favourites_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      allFavourites.Clear();
+
+      foreach (var item in Favourites.SelectedItems)
+      {
+        allFavourites.Add(item.ToString());
       }
     }
   }

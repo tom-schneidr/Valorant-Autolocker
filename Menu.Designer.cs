@@ -28,6 +28,7 @@ namespace Autolocker
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.agentPage = new System.Windows.Forms.TabPage();
+      this.checkBoxDuelist = new System.Windows.Forms.CheckBox();
       this.selectIsoButton = new System.Windows.Forms.Button();
       this.selectCloveButton = new System.Windows.Forms.Button();
       this.selectDeadlockButton = new System.Windows.Forms.Button();
@@ -81,16 +82,20 @@ namespace Autolocker
       this.bindConfigDropdown = new System.Windows.Forms.ComboBox();
       this.ascentConfigLabel = new System.Windows.Forms.Label();
       this.ascentConfigDropdown = new System.Windows.Forms.ComboBox();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.Favourites = new System.Windows.Forms.ListBox();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.tabControl1.SuspendLayout();
       this.agentPage.SuspendLayout();
       this.configPage.SuspendLayout();
+      this.tabPage1.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl1
       // 
       this.tabControl1.Controls.Add(this.agentPage);
       this.tabControl1.Controls.Add(this.configPage);
+      this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControl1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -102,6 +107,7 @@ namespace Autolocker
       // agentPage
       // 
       this.agentPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.agentPage.Controls.Add(this.checkBoxDuelist);
       this.agentPage.Controls.Add(this.selectIsoButton);
       this.agentPage.Controls.Add(this.selectCloveButton);
       this.agentPage.Controls.Add(this.selectDeadlockButton);
@@ -139,6 +145,19 @@ namespace Autolocker
       this.agentPage.TabIndex = 0;
       this.agentPage.Text = "Agent Select";
       this.agentPage.UseVisualStyleBackColor = true;
+      // 
+      // checkBoxDuelist
+      // 
+      this.checkBoxDuelist.AutoSize = true;
+      this.checkBoxDuelist.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.checkBoxDuelist.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxDuelist.Location = new System.Drawing.Point(533, 395);
+      this.checkBoxDuelist.Name = "checkBoxDuelist";
+      this.checkBoxDuelist.Size = new System.Drawing.Size(202, 31);
+      this.checkBoxDuelist.TabIndex = 57;
+      this.checkBoxDuelist.Text = "random Duelist";
+      this.checkBoxDuelist.UseVisualStyleBackColor = true;
+      this.checkBoxDuelist.CheckedChanged += new System.EventHandler(this.CheckBoxDuelist_CheckedChanged);
       // 
       // selectIsoButton
       // 
@@ -178,7 +197,7 @@ namespace Autolocker
       this.checkBoxUseConfig.AutoSize = true;
       this.checkBoxUseConfig.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxUseConfig.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxUseConfig.Location = new System.Drawing.Point(337, 396);
+      this.checkBoxUseConfig.Location = new System.Drawing.Point(365, 355);
       this.checkBoxUseConfig.Name = "checkBoxUseConfig";
       this.checkBoxUseConfig.Size = new System.Drawing.Size(146, 31);
       this.checkBoxUseConfig.TabIndex = 52;
@@ -433,7 +452,7 @@ namespace Autolocker
       this.activeKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.activeKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.activeKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.activeKeybindButton.Location = new System.Drawing.Point(461, 433);
+      this.activeKeybindButton.Location = new System.Drawing.Point(469, 429);
       this.activeKeybindButton.Name = "activeKeybindButton";
       this.activeKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.activeKeybindButton.TabIndex = 29;
@@ -446,7 +465,7 @@ namespace Autolocker
       this.randomKeybindButton.BackColor = System.Drawing.Color.Transparent;
       this.randomKeybindButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.randomKeybindButton.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.randomKeybindButton.Location = new System.Drawing.Point(461, 349);
+      this.randomKeybindButton.Location = new System.Drawing.Point(281, 391);
       this.randomKeybindButton.Name = "randomKeybindButton";
       this.randomKeybindButton.Size = new System.Drawing.Size(70, 40);
       this.randomKeybindButton.TabIndex = 28;
@@ -459,7 +478,7 @@ namespace Autolocker
       this.checkBoxActive.AutoSize = true;
       this.checkBoxActive.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxActive.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxActive.Location = new System.Drawing.Point(337, 437);
+      this.checkBoxActive.Location = new System.Drawing.Point(365, 433);
       this.checkBoxActive.Name = "checkBoxActive";
       this.checkBoxActive.Size = new System.Drawing.Size(98, 31);
       this.checkBoxActive.TabIndex = 27;
@@ -472,7 +491,7 @@ namespace Autolocker
       this.checkBoxRandomAgent.AutoSize = true;
       this.checkBoxRandomAgent.Cursor = System.Windows.Forms.Cursors.Hand;
       this.checkBoxRandomAgent.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxRandomAgent.Location = new System.Drawing.Point(337, 353);
+      this.checkBoxRandomAgent.Location = new System.Drawing.Point(173, 395);
       this.checkBoxRandomAgent.Name = "checkBoxRandomAgent";
       this.checkBoxRandomAgent.Size = new System.Drawing.Size(118, 31);
       this.checkBoxRandomAgent.TabIndex = 26;
@@ -963,6 +982,55 @@ namespace Autolocker
       this.ascentConfigDropdown.Size = new System.Drawing.Size(121, 27);
       this.ascentConfigDropdown.TabIndex = 0;
       // 
+      // tabPage1
+      // 
+      this.tabPage1.Controls.Add(this.Favourites);
+      this.tabPage1.Location = new System.Drawing.Point(4, 28);
+      this.tabPage1.Name = "tabPage1";
+      this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage1.Size = new System.Drawing.Size(855, 492);
+      this.tabPage1.TabIndex = 2;
+      this.tabPage1.Text = "Favourites";
+      this.tabPage1.UseVisualStyleBackColor = true;
+      this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+      // 
+      // Favourites
+      // 
+      this.Favourites.Anchor = System.Windows.Forms.AnchorStyles.Top;
+      this.Favourites.FormattingEnabled = true;
+      this.Favourites.ItemHeight = 19;
+      this.Favourites.Items.AddRange(new object[] {
+            "Astra",
+            "Breach",
+            "Brimstone",
+            "Clove",
+            "Chamber",
+            "Cypher",
+            "Deadlock",
+            "Fade",
+            "Gekko",
+            "Harbor",
+            "Iso",
+            "Jett",
+            "Kay/o",
+            "Killjoy",
+            "Neon",
+            "Omen",
+            "Phoenix",
+            "Raze",
+            "Reyna",
+            "Sage",
+            "Skye",
+            "Sova",
+            "Viper",
+            "Yoru"});
+      this.Favourites.Location = new System.Drawing.Point(359, 24);
+      this.Favourites.Name = "Favourites";
+      this.Favourites.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+      this.Favourites.Size = new System.Drawing.Size(102, 460);
+      this.Favourites.TabIndex = 0;
+      this.Favourites.SelectedIndexChanged += new System.EventHandler(this.Favourites_SelectedIndexChanged);
+      // 
       // openFileDialog1
       // 
       this.openFileDialog1.FileName = "openFileDialog1";
@@ -982,13 +1050,12 @@ namespace Autolocker
       this.agentPage.PerformLayout();
       this.configPage.ResumeLayout(false);
       this.configPage.PerformLayout();
+      this.tabPage1.ResumeLayout(false);
       this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TabControl tabControl1;
         private TabPage agentPage;
         private Label selectedAgentLabel;
         private Button selectYoruButton;
@@ -1044,6 +1111,10 @@ namespace Autolocker
     private Label sunsetConfigLabel;
     private Button selectCloveButton;
     private Button selectIsoButton;
+    private CheckBox checkBoxDuelist;
+    private TabControl tabControl1;
+    private TabPage tabPage1;
+    private ListBox Favourites;
   }
 }
 
