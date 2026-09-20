@@ -1,3 +1,5 @@
+> **Disclaimer:** This is a pre-AI side project and is no longer actively maintained. It has not been updated for newer versions of VALORANT and may not work as expected after later game or client updates.
+
 ![image](https://github.com/tom-schneidr/Valorant-Autolocker/assets/111613326/1b781ebd-7d5c-453a-8d4d-f6a03243d81f)
 
 # Valorant Autolocker
